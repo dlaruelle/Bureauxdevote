@@ -15,66 +15,63 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-dojo.provide("js.Config");
-dojo.declare("js.Config", null, {
-
-    // This file contains various configuration settings for "Election Polling Place" template
+    // Ce fichier contient les paramètres de configuration du modèle d'application "Bureau de vote"
     //
-    // Use this file to perform the following:
+    // Modifiez ce fichier pour :
     //
-    // 1.  Specify application title                  - [ Tag(s) to look for: ApplicationName ]
-    // 2.  Set path for application icon              - [ Tag(s) to look for: ApplicationIcon ]
-    // 3.  Set splash screen message                  - [ Tag(s) to look for: SplashScreenMessage ]
-    // 4.  Set URL for help page                      - [ Tag(s) to look for: HelpURL ]
+    // 1.  Définir le nom de l'application                  - [ Mot(s) clé à rechercher : ApplicationName ]
+    // 2.  Définir le l'URL de l'icône de l'application     - [ Mot(s) clé à rechercher : ApplicationIcon ]
+    // 3.  Définir le message d'accueil                     - [ Mot(s) clé à rechercher : SplashScreenMessage ]
+    // 4.  Définir l'URL de la page d'aide                  - [ Mot(s) clé à rechercher : HelpURL ]
     //
-    // 5.  Specify URLs for basemaps                  - [ Tag(s) to look for: BaseMapLayers ]
-    // 6.  Set initial map extent                     - [ Tag(s) to look for: DefaultExtent ]
+    // 5.  Gérer les fonds de plan                    - [ Mot(s) clé à rechercher : BaseMapLayers ]
+    // 6.  Définir l'étendue par défaut               - [ Mot(s) clé à rechercher : DefaultExtent ]
     //
-    // 7.  Choose to use WebMap or map services       - [ Tag(s) to look for: UseWebmap <true/false> ]
-    // 8.  Specify WebMapId, if using WebMap          - [ Tag(s) to look for: WebMapId ]
-    // 9.  Or for using map services:
-    // 9a. Specify URLs for operational layers        - [ Tag(s) to look for: PollLayer, PollMobileLayer, PrecinctLayer, PrecinctOfficeLayer, PollingCommentsLayer, ReferenceOverlayLayer ]
-    // 9b. Customize info-Window settings             - [ Tag(s) to look for: InfoWindowHeader, InfoWindowContent ]
-    // 9c. Customize info-Popup settings              - [ Tag(s) to look for: InfoPopupFieldsCollection, ShowCommentsTab ]
-    // 9d. Customize info-Popup size                  - [ Tag(s) to look for: InfoPopupHeight, InfoPopupWidth ]
-    // 9e. Customize data formatting                  - [ Tag(s) to look for: ShowNullValueAs, FormatDateAs ]
+    // 7.  Choisir d'utiliser ou non une WebMap                - [ Mot(s) clé à rechercher : UseWebmap <true/false> ]
+    // 8.  Définit la WebMapId, si vous utilisez une WebMap    - [ Mot(s) clé à rechercher : WebMapId ]
+    // 9.  Ou, si vous utilisez des Map Services :
+    // 9a. Définir les URL des services de données             - [ Mot(s) clé à rechercher : PollLayer, PollMobileLayer, PrecinctLayer, PrecinctOfficeLayer, PollingCommentsLayer, ReferenceOverlayLayer ]
+    // 9b. Paramétrer l'infobulle                     - [ Mot(s) clé à rechercher : InfoWindowHeader, InfoWindowContent ]
+    // 9c. Paramétrer la popup                        - [ Mot(s) clé à rechercher : InfoPopupFieldsCollection, ShowCommentsTab ]
+    // 9d. Personnaliser la taille de la popup        - [ Mot(s) clé à rechercher : InfoPopupHeight, InfoPopupWidth ]
+    // 9e. Personnaliser le formatage des données     - [ Mot(s) clé à rechercher : ShowNullValueAs, FormatDateAs ]
     //
-    // 10. Customize address search settings          - [ Tag(s) to look for: LocatorSettings ]
+    // 10. Personnaliser les paramètres du service de géocodage         - [ Mot(s) clé à rechercher : LocatorSettings ]
     //
-    // 11. Set URL for geometry service               - [ Tag(s) to look for: GeometryService ]
+    // 11. Définir l'adresse du service de géométries                   - [ Mot(s) clé à rechercher : GeometryService ]
     //
-    // 12. Customize routing settings for directions  - [ Tag(s) to look for: RouteServiceURL, RouteColor, RouteWidth ]
-    // 12a.Choose destination for route generation    - [ Tag(s) to look for: GenerateRouteToNonDesignatedPollingPlace <true/false> ]
+    // 12. Personnaliser le calcul d'itinéraire  - [ Mot(s) clé à rechercher : RouteServiceURL, RouteColor, RouteWidth ]
+    // 12a.Choisir les bureaux de vote pour lesquels l'itinéraire doit être calculé  
+    //                                           - [ Mot(s) clé à rechercher : GenerateRouteToNonDesignatedPollingPlace <true/false> ]
+    // 13. Configurer les informations qui s'afficheront dans les onglets et les volets
+    //                                                - [ Mot(s) clé à rechercher : InfoBoxWidth, PollingPlaceTabData, ElectedOfficialsTabData ]
     //
-    // 13. Configure data to be displayed on the bottom panel
-    //                                                - [ Tag(s) to look for: InfoBoxWidth, PollingPlaceTabData, ElectedOfficialsTabData ]
-    //
-    // 14. Specify URLs for map sharing               - [ Tag(s) to look for: FacebookShareURL, TwitterShareURL, ShareByMailLink ]
-    // 14a.In case of changing the TinyURL service
-    //     Specify URL for the new service            - [ Tag(s) to look for: MapSharingOptions (set TinyURLServiceURL, TinyURLResponseAttribute) ]
+    // 14. Définir l'URL pour le partage               - [ Mot(s) clé à rechercher : FacebookShareURL, TwitterShareURL, ShareByMailLink ]
+    // 14a.Pour changer le service de raccourcissement d'URL
+    //     Définir l'URL pour le nouveau service            - [ Mot(s) clé à rechercher : MapSharingOptions (set TinyURLServiceURL, TinyURLResponseAttribute) ]
     //
     //
 
     // ------------------------------------------------------------------------------------------------------------------------
-    // GENERAL SETTINGS
+    // PARAMETRES GENERAUX
     // ------------------------------------------------------------------------------------------------------------------------
-    // Set application title
+    // Définir le nom de l'application
     ApplicationName: "Bureau de vote",
 
-    // Set application icon path
+    // Définir le l'URL de l'icône de l'application
     ApplicationIcon: "images/EPPIcon.png",
 
-    // Set splash window content - Message that appears when the application starts
+    // Définir le message d'accueil - Le texte qui s'affiche au lancement de l'application
     SplashScreenMessage: "<b>Bureaux de vote</b> <br/> <hr/> <br/> L'application <b>Bureaux de vote</b> offre un moyen simple pour les électeurs de trouver leur bureau de vote.<br /><br />Lorsqu'un électeur saisit son adresse, l'application met en évidence le lieu de vote approprié ainsi que le bureau de vote associé. Des informations pertinentes sur ce lieu de vote sont également présentées dans une série d'onglets au bas de l'application.<br/><br/>Pour toutes informations supplémentaires sur le fonctionnement de cette application référez vous à l'aide disponible en haut à droite de votre fenêtre. <br/><br/>",
 
-    // Set URL of help page/portal
+    // Définir l'URL de la page d'aide
     HelpURL: "help.htm",
 
     // ------------------------------------------------------------------------------------------------------------------------
-    // BASEMAP SETTINGS
+    // PARAMETRES DES FONDS DE PLAN
     // ------------------------------------------------------------------------------------------------------------------------
-    // Set baseMap layers
-    // Please note: All basemaps need to use the same spatial reference. By default, on application start the first basemap will be loaded
+    // Définir les services de fonds de plan
+    // Note importante :  Tous les fonds de plan doivent avoir la même projection. Cette projection sera celle attribuée à toutes les couches affichées
     BaseMapLayers: [{
         Key: "parcelMap",
         ThumbnailSource: "images/parcelMap.png",
@@ -87,18 +84,18 @@ dojo.declare("js.Config", null, {
         MapURL: "http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer"
     }],
 
-    // Initial map extent. Use comma (,) to separate values and don t delete the last comma
+    // Etendue par défaut. Le séparateur est la virgule. ne supprimez pas la dernière virgule
     DefaultExtent: "245959, 6244369, 252779, 6250164",	
 	
     // ------------------------------------------------------------------------------------------------------------------------
-    // OPERATIONAL DATA SETTINGS
+    // PARAMETRES DES SERVICES DE DONNEES
     // ------------------------------------------------------------------------------------------------------------------------
-    // WebMaps are not supported with the 10.2 version of the Election Polling Place application. Please use Map Services for operational layers. Do not change the "UseWebmap" and "WebMapId" parameters.
+    // Les WebMaps ne sont pas supportées avec la version 10.2 de l'application de Bureaux de vote. Utilisez plutôt les services de données (MapServices). Ne changez pas "UseWebmap" et "WebMapId".
     UseWebmap: false,
 
     WebMapId: "",
 
-    // Set the following options for the configuration of operational layers
+    // Définir les options suivantes pour chacun des MapServices de données
     PollLayer: {
         ServiceUrl: "http://services.arcgis.com/d3voDfTFbHOCRwVR/ArcGIS/rest/services/BureauDeVoteBoulogneBillancourt/FeatureServer/0",
         Image: "images/pollingPlace.png",
@@ -121,11 +118,11 @@ dojo.declare("js.Config", null, {
 
     PrecinctOfficeLayer: "http://services.arcgis.com/d3voDfTFbHOCRwVR/ArcGIS/rest/services/BureauDeVoteBoulogneBillancourt/FeatureServer/4",
 
-    // Set field for precinct ID
+    // Définir le champ identifiant pour les bureaux de votes
     PrecinctID: "${NUM_BUR}",
 
     PollingCommentsLayer: "http://services.arcgis.com/d3voDfTFbHOCRwVR/ArcGIS/rest/services/BureauDeVoteBoulogneBillancourt/FeatureServer/3",
-    // Set primary key for comments table
+    // Définir la clé primaire pour la table des commentaires
     PrimaryKeyForComments: "${ID_LV}",
 
     // ServiceUrl is the REST end point for the reference overlay layer
@@ -137,20 +134,20 @@ dojo.declare("js.Config", null, {
 
 
     // ------------------------------------------------------------------------------------------------------------------------
-    // INFO-WINDOW SETTINGS
+    // PARAMETRES DE L'INFOBULLE
     // ------------------------------------------------------------------------------------------------------------------------
-    // Info-window is a small, two line popup that gets displayed on selecting a feature
-    // Set Info-window title. Configure this with text/fields
+    // L'infobulle est une petite fenêtre de deux lignes qui sera affichée sur les entités sélectionnées
+    // Paramatrez le titre de l'infobulle avec du texte et/ou la valeur d'un champ
     InfoWindowHeader: "${LIEU_VOTE}",
 
-    // Choose content/fields for the info window
+    // Paramatrez le contenu de l'infobulle avec du texte et/ou la valeur d'un champ
     InfoWindowContent: "${ADRESSE}",
 
     // ------------------------------------------------------------------------------------------------------------------------
-    // INFO-POPUP SETTINGS
+    // PARAMETRES DE LA POPUP DES LIEUX DE VOTE
     // ------------------------------------------------------------------------------------------------------------------------
-    // Info-popup is a popup dialog that gets displayed on selecting a feature
-    // Set the content to be displayed on the info-Popup. Define labels, field values, field types and field formats
+    // La Popup est une fenêtre qui affiche les informations détaillées sur une entité électionnée
+    // Définissez le contenu à afficher dans la Popup : labels, valeurs de champs, types de champs et format
     InfoPopupFieldsCollection: [{
         DisplayText: "Adresse:",
         FieldName: "${ADRESSE}"
@@ -188,27 +185,27 @@ dojo.declare("js.Config", null, {
 		NoNullDisplay: true
 	}],
 
-    // Set this to true to show "Comments" tab in the info-Popup
+    // Définir ce paramètre à "true" si vous voulez montrer l'onglet "Commentaires" dans la popup
     ShowCommentsTab: false,
 
 
-    // Set size of the info-Popup - select maximum height and width in pixels (not applicable for tabbed info-Popups)
-    InfoPopupHeight: 260, //minimum height should be 260 for the info-popup in pixels
-    InfoPopupWidth: 330, //minimum width should be 330 for the info-popup in pixels
+    // Configurer la taille de la popup - définir la hauteur et la largeur maxi en pixels (ne fonctionne pas avec les popup avec des onglets)
+    InfoPopupHeight: 260,
+    InfoPopupWidth: 330,
 
-    // Set string value to be shown for null or blank values
+    // Choisissez comment afficher les valeurs null ou vides
     ShowNullValueAs: "-",
 
-    // Set date format
+    // Définir comment afficher les dates
     FormatDateAs: "dd MM yyyy",
 
 
     // ------------------------------------------------------------------------------------------------------------------------
-    // ADDRESS SEARCH SETTINGS
+    // PARAMETRES DU SERVICE DE GEOCODAGE
     // ------------------------------------------------------------------------------------------------------------------------
 
-    // Set Locator service settings
-	//Default US GEOCODER
+    // Définir les parètres du service de géocodage
+	// Service de géocodage par défaut
     LocatorSettings: {
         DefaultLocatorSymbol: "images/RedPushpin.png",
         SymbolSize: {
@@ -235,14 +232,14 @@ dojo.declare("js.Config", null, {
 		SuggestTimeout: 1000
     },
 
-	// French BD Adresse
+	// Service de géocodage sur le service en ligne Esri France sur la BD Adresse
 	// LocatorSettings: {
         // DefaultLocatorSymbol: "images/RedPushpin.png",
         // SymbolSize: {
             // width: 25,
             // height: 25
         // },
-		// Token: "",
+		// Token: "ICI VOTRE CLE",
         // DefaultValue: "20 Avenue Andre Morizet",
 		// DefaultCity: "Boulogne-Billancourt",
         // LocatorParameters: ["SingleLine"],
@@ -258,36 +255,36 @@ dojo.declare("js.Config", null, {
     // },
 	
     // ------------------------------------------------------------------------------------------------------------------------
-    // GEOMETRY SERVICE SETTINGS
+    // PARAMETRAGE DU SERVICE DE GEOMETRIES
     // ------------------------------------------------------------------------------------------------------------------------
-    // Set geometry service URL
-    GeometryService: "http://testv3.arcopole.fr:6080/arcgis/rest/services/Utilities/Geometry/GeometryServer",
+    // Définir l'URL du service de géométries
+    GeometryService: "http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer",
 
 
     // ------------------------------------------------------------------------------------------------------------------------
-    // DRIVING DIRECTIONS SETTINGS
+    // PARAMTRAGE DU SERVICE DE CALCUL D'ITINERAIRES
     // ------------------------------------------------------------------------------------------------------------------------
-    // Set URL for routing service (network analyst), to turn off the routing functionality update the "ShowDirection" variable to false in the "PollingPlaceTabData" section below.
+    // Définir l'IRM du service de calcul d'itinéraires (network analyst), to désactiver le calcul d'itinéraire, mettez à jour la variable "ShowDirection" variable dans la section "PollingPlaceTabData".
     RouteServiceURL: "http://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World",
 
-    // Set color for the route symbol
+    // Définir la coucleur utilisée pour représenter l'itinéraire
     RouteColor: "#7F7FFE",
 
-    // Set width of the route
+    // Définir l'épaisseur du trait
     RouteWidth: 6,
 
-    // Choose destination polling place for route generation
-    // If set to true, route will be generated for any selected polling place; otherwise route will be generated for the designated polling place
+    // Choisissez les bureaux de vote pour lesquels l'itinéraire doit être calculé
+    // Si cette variable est à "true", alors l'itinéraire sera calculé pour n'importe quel bureau de vote. Sinon, seul l'itinéraire pour le bureau de vote rattaché sera caclculé
     GenerateRouteToNonDesignatedPollingPlace: false,
 
     // ------------------------------------------------------------------------------------------------------------------------
-    // SETTINGS FOR INFO-PODS ON THE BOTTOM PANEL
+    // PARAMETRAGES POUR LES ONGLETS ET VOLETS DE LA BARRE DES LIEUX DE VOTES
     // ------------------------------------------------------------------------------------------------------------------------
-    // Set width of the boxes in the bottom panel
+    // Définir la largeur de chaque volet
     InfoBoxWidth: 422,
 
 
-    // Set data to be displayed in the "Polling Place" tab on the bottom panel
+    // Définir les informations à afficher dans l'onglet "Lieu de vote"
     PollingPlaceTabData: {
         DetailsBox: {
             HeaderColor: "#303030",
@@ -307,7 +304,8 @@ dojo.declare("js.Config", null, {
         }
     },
 
-    // Set data to be displayed in the "Elected Officials" tab on the bottom panel
+    // Gestion de l'affichaeg multiple (optionnel)
+    // Définir les informations qui doivent s'afficher dans l'onglet "Informations"
     ElectedOfficialsTabData: {
         CountyLayer: {
             ServiceUrl: "http://services.arcgis.com/d3voDfTFbHOCRwVR/ArcGIS/rest/services/BureauDeVoteBoulogneBillancourt/FeatureServer/2",
@@ -326,27 +324,27 @@ dojo.declare("js.Config", null, {
         }
     },
 
-    // Define the database field names
-    // Note: DateFieldName refers to a date database field.
-    // All other attributes refer to text database fields.
+    // Indiquer les noms des champs de la base de données
+    // Note: DateFieldName fait référence au champs de type date.
+    // Tous les autres attributs font référence à des chamsp de type texte.
     DatabaseFields: {
         PollingIdFieldName: "ID_LV",
         CommentsFieldName: "COMMENTAIRES",
         DateFieldName: "DATE"
     },
 
-    // Set info-pop fields for displaying comment
+    // Définir les champs des commentaires
     CommentsInfoPopupFieldsCollection: {
         Submitdate: "${DATE}",
         Comments: "${COMMENTAIRES}"
     },
 
     // ------------------------------------------------------------------------------------------------------------------------
-    // SETTINGS FOR MAP SHARING
+    // PARAMEATRGE POUR LE PARTAGE
     // ------------------------------------------------------------------------------------------------------------------------
-    // Set URL for TinyURL service, and URLs for social media
+    // Définir l'URL pour le service de raccourcissement d'URL et les URL pour les réseaux sociaux
     MapSharingOptions: {
-        TinyURLServiceURL: "http://api.bit.ly/v3/shorten?login=lucian.angelus&apiKey=1dUeT03&uri=${0}&format=json",
+        TinyURLServiceURL: "http://api.bit.ly/v3/shorten?login=AAAA&apiKey=BBBB&uri=${0}&format=json",
         TinyURLResponseAttribute: "data.url",
 
         FacebookShareURL: "http://www.facebook.com/sharer.php?u=${0}&t=Election%20Polling%20Place",
